@@ -8,5 +8,5 @@ def ProductListView(request):
     return render(request,'products.html')
 
 def ProductDetailView(request):
-    return render(request, 'products_detal.html')
+    return render(request, 'products_details.html')
 
