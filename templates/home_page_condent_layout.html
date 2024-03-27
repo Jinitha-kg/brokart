@@ -4,20 +4,38 @@
     <div class="small-container">
         <div class="row">
             <div class="col-3">
-                <img src="{% static 'images/category-1.jpg' %}">
+                <img src="{% static 'images/img1.jpg' %}">
             </div>
             <div class="col-3">
-                <img src="{% static 'images/category-2.jpg' %}">
+                <img src="{% static 'images/img3.webp' %}">
             </div>
             <div class="col-3">
-                <img src="{% static 'images/category-3.jpg' %}">
+                <img src="{% static 'images/img2.webp' %}">
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- Featured Products -->
+    <div class="row">
+        {% for product in product_chunks %}
+        <div class="col-4">
+            
+            <a href="{% url 'details_product' %}"><img src="{{ product.image.url }}"></a>
+            <h4>{{ product.title }}</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>$ {{ product.price}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+<!-- Featured Products 
 
 <div class="small-container">
     <h2 class="title">Featured Products</h2>
@@ -174,7 +192,7 @@
     </div>
 </div>
 
-<!-- Offer -->
+Offer 
 <div class="offer">
     <div class="small-container">
         <div class="row">
@@ -191,7 +209,7 @@
         </div>
     </div>
 </div>
-
+-->
 <!-- Testimonial -->
 <div class="testimonial">
     <div class="small-container">
